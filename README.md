@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|tel|string|
+|day|string|
+|name|string|
+### Association
+- has_many :orders
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## orderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|food|string|
+|price|string|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
