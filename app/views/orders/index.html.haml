@@ -1,0 +1,35 @@
+.page
+  .contents
+    .left-bar
+      .number-box
+        = render partial: 'menu_index'
+      .name-box
+        .name-box__form
+          %input{:type => "text", :placeholder => "名前", :class => "input-name"}/
+      .tel-box
+        .tel-box__form
+          %input{:type => "tel",:placeholder => "電話番号",:class => "input-tel"}/
+      .day-box
+        .day-box__form
+          %input{:type => "text", :placeholder => "日時", :class => "input-day"}/
+
+
+    .right-bar
+      .order-list
+        - @user_foods.each do |user_food|
+          .order-box
+            .order-box__deta
+              .order-box__deta--name
+                = user_food.food
+              .order-box__deta--number
+                = user_food.quantity
+              .order-box__deta--delete
+                = link_to "消", order_path(user_food), method: :delete
+        .reset-box
+          = link_to "RESET", destroy_all_orders_path, method: :delete
+      .price-box
+        .price-box__deta
+          .price-box__deta--yen
+            ¥
+          .price-box__deta--price
+            = @total

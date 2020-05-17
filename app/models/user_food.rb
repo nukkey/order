@@ -1,0 +1,3 @@
+class UserFood < ApplicationRecord
+
+end
