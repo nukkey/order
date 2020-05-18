@@ -102,6 +102,7 @@
       background-color: #BBBBBB;
       height: 90%;
       position: relative;
+      padding-top: 5px;
       .reset-box {
         background-color:white;
         height: 44px;
@@ -122,14 +123,14 @@
       .order-box {
         height: 8%;
         display: flex;
-        position: relative;
+        // position: relative;
         .order-box__deta {
           height: 70%;
           width: 90%;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          left: 0;
+          // position: absolute;
+          // bottom: 0;
+          // right: 0;
+          // left: 0;
           margin: auto;
           display: flex;
           &--name {
