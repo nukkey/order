@@ -14,9 +14,10 @@ class OrdersController < ApplicationController
 
   def create
     user_food = UserFood.find_by(food: params[:food])
+
     if user_food.nil?
       user_food = UserFood.new(user_food_params)
-    
+
       if user_food.save
         redirect_to root_path
       else
